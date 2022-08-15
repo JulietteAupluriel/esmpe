@@ -1,0 +1,17 @@
+TODO
+
+| - lang + 1
+| - logo a changer homepage
+| - mobile nav style
+| - cookie fonctionne ? 
+| - smooth scroll
+| - bug filtre actualiser
+| - verifier infos participants
+| - export csv plus complet
+- logo des partenaires
+- lang + 1
+
+
+
+- pas d'email / pas requis dans formulaire
+- fin des langues
