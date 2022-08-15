@@ -38,7 +38,6 @@ class EventController extends Controller
 
     public function update(Event $event)
     {
-      
         $event->update($this->getInputs());
         return redirect()->route('admin.events');
     }
@@ -63,7 +62,6 @@ class EventController extends Controller
             'website' => ['nullable', 'string', 'max:255'],
             'places' => ['required', 'integer'],
             'date' => ['nullable', 'date'],
-            
             'filter' => ['nullable', 'integer']
         ]);
     }

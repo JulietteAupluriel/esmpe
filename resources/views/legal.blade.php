@@ -14,7 +14,7 @@
         <h1>{{ __('text.legal') }}</h1>
        
         <div class="content fromWYSIWYG">
-        @if(app()->isLocale('FR')) 
+        @if(app()->isLocale('fr')) 
         {!! $content->legals_fr !!}
 		@else
         {!! $content->legals_nl !!}

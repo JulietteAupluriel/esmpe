@@ -21,7 +21,9 @@ use App\Http\Controllers\LocalizationController;
 
 // Route qui permet de connaître la langue active
 Route::get('locale', [LocalizationController::class,'getLang'])->name('getlang');
-
+Route::get('/test', function() {
+    return app()->getLocale();
+});
 // Route qui permet de modifier la langue
 Route::get('locale/{lang}',[LocalizationController::class,'setLang'])->name('setlang');
 

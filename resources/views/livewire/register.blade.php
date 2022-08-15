@@ -59,7 +59,7 @@
 				
 				<label class="container" for="accept">
 
-					@if(app()->isLocale('FR')) 
+					@if(app()->isLocale('fr')) 
 					J'accepte les <a href="{{ route('legal') }}" target="_blank">conditions d'utilisation du site</a>.
 					@else
 					J'accepte les <a href="{{ route('legal') }}" target="_blank">conditions d'utilisation du site</a>. NL

@@ -12,7 +12,7 @@
 		@foreach ($filters as $item)
 			<button wire:click="$set('tag', {{ $item->id }})" class="filter {{ $tag === $item->id ? 'active' : '' }}">
 			
-			@if(app()->isLocale('FR'))  {{ $item->name_fr }} @else {{ $item->name_nl }} @endif
+			@if(app()->isLocale('fr'))  {{ $item->name_fr }} @else {{ $item->name_nl }} @endif
 			</button>
 		@endforeach
 	</div>
@@ -39,17 +39,17 @@
 				$month = substr($month, 0, -1);
 				?>
 				<span class="day">{{ $item->date?->isoFormat('DD') }} <span class="month">{{ $month }}</span></span>
-				<span class="schedule">@if(app()->isLocale('FR'))  {{ $item->schedule_fr }} @else {{ $item->schedule_nl }} @endif</span>
+				<span class="schedule">@if(app()->isLocale('fr'))  {{ $item->schedule_fr }} @else {{ $item->schedule_nl }} @endif</span>
 			</div>
 
 			<div class="title">
 				
-					<h4>    @if(app()->isLocale('FR'))  {{ $item->title_fr }} @else {{ $item->title_nl }} @endif
+					<h4>    @if(app()->isLocale('fr'))  {{ $item->title_fr }} @else {{ $item->title_nl }} @endif
  </h4>
 				
 					@if( $filters->firstWhere('id', $item->filter) )
 					<span class="filter">
-					@if(app()->isLocale('FR')) 
+					@if(app()->isLocale('fr')) 
 						{{ $filters->firstWhere('id', $item->filter)?->name_fr }}
 						@else
 						{{ $filters->firstWhere('id', $item->filter)?->name_nl }}

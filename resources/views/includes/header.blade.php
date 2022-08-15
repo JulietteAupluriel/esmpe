@@ -8,8 +8,8 @@
 
 	</ul>
 	<ul class="lang">
-		<li class="{{ app()->isLocale('FR') ? 'active' : '' }}" ><a href="/locale/FR" >FR</a></li>
-        <li class="{{ app()->isLocale('NL') ? 'active' : '' }}" ><a href="/locale/NL"  >NL</a></li>         
+		<li class="{{ app()->isLocale('fr') ? 'active' : '' }}" ><a href="/locale/fr" >FR</a></li>
+        <li class="{{ app()->isLocale('nl') ? 'active' : '' }}" ><a href="/locale/nl"  >NL</a></li>         
      
 	</ul>
 </nav>
@@ -31,8 +31,8 @@
 						<li class="{{ request()->routeIs('about') ? 'active' : '' }}"><a href="{{ route('about') }}">{{ __('text.about') }}</a></li>
 				</ul>
 				<div class="lang"><ul class="">
-                <li class="{{ app()->isLocale('FR') ? 'active' : '' }}" ><a href="/locale/FR" >FR</a></li>
-        <li class="{{ app()->isLocale('NL') ? 'active' : '' }}" ><a href="/locale/NL"  >NL</a></li>
+                <li class="{{ app()->isLocale('fr') ? 'active' : '' }}" ><a href="/locale/fr">FR</a></li>
+        <li class="{{ app()->isLocale('nl') ? 'active' : '' }}" ><a href="/locale/nl">NL</a></li>
 				</ul>
 </div>
             </div>
