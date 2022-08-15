@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,11 @@ use App\Http\Controllers\FilterController;
 |
 */
 
+// Route qui permet de connaître la langue active
+Route::get('locale', [LocalizationController::class,'getLang'])->name('getlang');
+
+// Route qui permet de modifier la langue
+Route::get('locale/{lang}',[LocalizationController::class,'setLang'])->name('setlang');
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');

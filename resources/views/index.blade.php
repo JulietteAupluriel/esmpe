@@ -14,7 +14,7 @@
 
     <div class="wrapper">
        
-    @if(app()->isLocale('FR'))
+    @if(app()->isLocale('fr'))
         <h1>Etterbeek se mobilise<br/> pour l'<b><span>emploi</span></b></h1>
         <div class="intro"><p>{!! $content->intro_fr !!}</p>
         @else
@@ -23,7 +23,7 @@
         @endif
 
 
-       <div> <a href="{{ route('programme') }}" class="btn">{{ __('text.voirleprogramme') }}</a></div>
+       <div> <a href="{{ route('programme', App::getLocale()) }}" class="btn">{{ __('text.voirleprogramme') }}</a></div>
 
 
     </div>
@@ -43,7 +43,7 @@
     <div class="wrapper">
         <ul> <li><a href="https://www.actiris.brussels" target="_blank"><img src="{{ asset('img/partner/actiris.png') }}"/></a></li>
        
-        @if(app()->isLocale('FR'))
+        @if(app()->isLocale('fr'))
         <li><a href="https://www.alepwabru.be/" target="_blank"><img src="{{ asset('img/partner/ale_ETT_FR.jpg') }}"/></a></li>
         @else
         <li><a href="https://www.alepwabru.be/" target="_blank"><img src="{{ asset('img/partner/ale_ETT_NL.jpg') }}"/></a></li>
