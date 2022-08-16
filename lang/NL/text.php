@@ -1,32 +1,4 @@
 <?php
 return [
-    'voirleprogramme' => 'Voir le programme NL',
-    'nom' => 'Nom',
-    'prénom' => 'Prénom',
-    'email' => 'Email',
-    'envoyer' => 'Submit',
-    'home' => 'home',
-    'programme' => 'programme',
-    'about' => 'about',
-    'legal' => 'legal',
-    'leprogramme' => 'Le programme nl',
-    'filtrer' => 'Filtrer nl',
-    'nofilter' => 'Pas de filtre NL',
-    'noresult' => 'Aucun résultat pour cette recherche NL',
-    'back' => 'retour NL',
-    'subscribe' => 'S\'inscrire NL',
-    'mandatory' => '* Tous les champs sont obligatoires NL',
-    'noplaces' => 'Désolé, il n\'y a actuellement plus de places disponibles pour cette formation. NL',
-    'mandatorys' => 'Champ obligatoire NL',
-    'emailType' => 'Champ de type email NL',
-    'noemail' => 'Cliquez ici si vous n’avez pas d’email ou si ne le consultez pas régulièrement. NL',
-    'phone' => 'Téléphone NL',
-    'commune' => 'Commune NL',
-    'numeroregistre' => 'Numéro de registre national NL',
-    'chercheuremploi' => 'Je déclare sur l’honneur être chercheur d’emploi inoccupé., NL',
-    'thankyou' => 'Merci pour votre temps! Un email vous sera envoyé sous peu. NL',
-    'maintitle'=> 'Etterbeek se mobilise pour l\'emploi',
-    'lieu' => 'Lieu',
-    'intervenant' => 'Intervenant(s)',
-    'website' => 'Site web' 
+    'voirleprogramme' => 'Voir le programme NL' 
 ];

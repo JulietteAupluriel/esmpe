@@ -28,7 +28,5 @@ return [
     'maintitle'=> 'Etterbeek se mobilise pour l\'emploi',
     'lieu' => 'Lieu',
     'intervenant' => 'Intervenant(s)',
-    'website' => 'Site web' 
-    
-
+    'website' => 'Site web'
 ];
