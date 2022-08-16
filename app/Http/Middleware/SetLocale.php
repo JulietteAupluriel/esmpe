@@ -12,10 +12,6 @@ class SetLocale
     public function handle(Request $request, Closure $next)
     {
       
-        $locale = Str::contains(request()->fullUrl(), 'nl') ? 'nl' : 'fr';
-        
-        app()->setLocale($locale);
-
-        return $next($request);
+     
     }
 }

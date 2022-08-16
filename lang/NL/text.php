@@ -1,5 +1,4 @@
 <?php
-
 return [
     'voirleprogramme' => 'Voir le programme NL',
     'nom' => 'Nom',
