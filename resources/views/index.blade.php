@@ -23,7 +23,7 @@
         @endif
 
 
-       <div> <a href="{{ route('programme', App::getLocale()) }}" class="btn">@lang('text.voirleprogramme') {{ __('text.voirleprogramme') }}</a></div>
+       <div> <a href="{{ route('programme', App::getLocale()) }}" class="btn">@lang('validation.boolean') {{ __('text.voirleprogramme') }}</a></div>
 
 
     </div>
