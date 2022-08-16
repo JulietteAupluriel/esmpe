@@ -12,6 +12,7 @@ class PageController extends Controller
 {
     public function index()
     {
+       
         return view('index', ['content' => General::first()]);
        //return view('index');
     }

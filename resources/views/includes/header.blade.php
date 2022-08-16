@@ -30,9 +30,10 @@
 						<li class="{{ request()->routeIs('programme') ? 'active' : '' }}"><a href="{{ route('programme') }}">{{ __('text.programme') }}</a></li>
 						<li class="{{ request()->routeIs('about') ? 'active' : '' }}"><a href="{{ route('about') }}">{{ __('text.about') }}</a></li>
 				</ul>
-				<div class="lang"><ul class="">
+				<div class="lang">
+                    <ul class="">
                 <li class="{{ app()->isLocale('fr') ? 'active' : '' }}" ><a href="/locale/fr">FR</a></li>
-        <li class="{{ app()->isLocale('nl') ? 'active' : '' }}" ><a href="/locale/nl">NL</a></li>
+                <li class="{{ app()->isLocale('nl') ? 'active' : '' }}" ><a href="/locale/nl">NL</a></li>
 				</ul>
 </div>
             </div>
