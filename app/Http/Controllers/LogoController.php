@@ -53,6 +53,7 @@ class LogoController extends Controller
             'url_fr' => 'filled|string|max:255',
             'url_nl' => 'filled|string|max:255',
             'page' => 'filled|string|max:255',
+            'order' => 'number',
             'image' => 'filled'
             
             
