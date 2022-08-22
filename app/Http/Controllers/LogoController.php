@@ -29,7 +29,7 @@ class LogoController extends Controller
     }
 
     public function store(Logo $logo) {
-         Logo::create($this->data());
+        Logo::create($this->data());
         $this->image($logo);
         return redirect()->route('admin.logos');
     }

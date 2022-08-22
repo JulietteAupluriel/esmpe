@@ -178,7 +178,7 @@ footer li:last-of-type:after {
 
 .btn {
     border-radius: 30px;
-    background-color: rgb(253, 89, 131);
+    background-color: #fd5983;
     box-shadow: 4.388px 4.092px 15.3px 2.7px rgba(29, 29, 29, 0.27);
     padding: 10px 30px;
     display: inline-block;
