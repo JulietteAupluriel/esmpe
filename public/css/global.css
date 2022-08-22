@@ -23,6 +23,7 @@ h2 {
 h1 b,
 h3 b {
     position: relative;
+    display: inline-block;
 }
 
 h1 b:before,
