@@ -28,17 +28,15 @@ class LogoController extends Controller
        return view('admin.logos.edit', ['logo' => $logo]);
     }
 
-    public function store() {
-        $logo = Logo::create($this->data());
+    public function store(Logo $logo) {
+         Logo::create($this->data());
         $this->image($logo);
         return redirect()->route('admin.logos');
     }
 
     public function update(Logo $logo) {
         $logo->update($this->data());
-      
         $this->image($logo);
-       
         return redirect()->route('admin.logos');
     }
 
