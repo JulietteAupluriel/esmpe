@@ -43,7 +43,7 @@
 		<input type="file" name="image" id="image" class="block">
 		@error('image') <div class="text-red-500 text-xs">{{ $message }}</div> @enderror
 		@if ($logo->image)
-			<img src="{{ asset('/' . $logo->image) }}" class="mt-4 h-56">
+			<img src="{{ asset('/storage/' . $logo->image) }}" class="mt-4 h-56">
 		@endif
 	</div>
 </div>

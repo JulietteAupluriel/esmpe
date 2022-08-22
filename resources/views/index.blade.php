@@ -45,7 +45,7 @@
         <ul> 
             
         @foreach ($logos as $item)
-        <li><a href="{{ app()->isLocale('fr')? $item->url_fr : $item->url_nl }}" target="_blank"><img src="{{ asset($item->image) }}"/></a></li>
+        <li><a href="{{ app()->isLocale('fr')? $item->url_fr : $item->url_nl }}" target="_blank"><img src="storage/{{ asset($item->image) }}"/></a></li>
        @endforeach
 
        </ul>
