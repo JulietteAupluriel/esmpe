@@ -14,7 +14,7 @@ class LogoController extends Controller
 
     public function index() {
         return view('admin.logos.index', [
-            'logos' => Logo::orderBy('order')->get()
+            'logos' => Logo::orderBy('page')->orderBy('order')->get()
         ]);
     }
 
