@@ -22,13 +22,16 @@
 				<label for="email">{{ __('text.email') }}</label>
 				<input type="email" wire:model="email" id="email" >
 				@error('email') <div class="error">{{ __('text.emailType') }}</div> @enderror
+
 			</div>
 			<div class="elt2 elt">
+			<input type="hidden"  class="form-control" id="noemail" name="noemail" wire:model="noemail">
 
-			<label class="container" for="noemail">{{ __('text.noemail') }}
-				<input type="checkbox" checked="checked" wire:model="noemail" id="noemail">
+			<label class="container" for="noemail2">{{ __('text.noemail') }}
+				<input type="checkbox" checked="checked"  wire:model="noemail" id="noemail2">
 				<span class="checkmark"></span>
 			</label>
+			
 
 			
 			
@@ -52,6 +55,7 @@
 			<input type="text" wire:model="national" id="national" placeholder="00.00.00-000.00" required>
 			@error('national') <div class="error">{{ __('text.mandatorys') }}</div> @enderror
 		</div>
+
 </fieldset>
 <fieldset>
 	
@@ -62,7 +66,8 @@
 					@if(app()->isLocale('fr')) 
 					J'accepte les <a href="{{ route('legal') }}" target="_blank">conditions d'utilisation du site</a>.
 					@else
-					J'accepte les <a href="{{ route('legal') }}" target="_blank">conditions d'utilisation du site</a>. NL
+					Ik accepteer <a href="{{ route('legal') }}" target="_blank">de gebruiksvoorwaarden van de site</a>. 
+					 
 					@endif
 
 				<input type="checkbox" checked="checked" wire:model="accept" id="accept">

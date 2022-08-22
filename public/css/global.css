@@ -47,11 +47,16 @@ h3 span {
     position: relative;
 }
 
+main {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Barlow';
     color: #1f4ea5;
     background-color: #f3f5f7;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 header {
@@ -548,6 +553,26 @@ button:hover {
     top: 60%;
 }
 
+.page_about .about .mainVisual {
+    height: 60%;
+    width: 50%;
+    max-height: 400px;
+    top: 100px
+}
+
+.is-active .page_about .mainVisual .deco2 {
+    right: -5%;
+    z-index: 3;
+    width: 15%;
+    transform: rotate(90deg);
+}
+
+.is-active .page_about .mainVisual .deco3 {
+    right: 18%;
+    bottom: 40px;
+    z-index: -2;
+}
+
 .page_about .intro {
     padding-left: 100px;
     max-width: 60%;
@@ -576,6 +601,7 @@ button:hover {
     height: 100%;
     width: 50%;
     max-height: 600px;
+    overflow: hidden;
 }
 
 .mainVisual .deco1 {
@@ -667,6 +693,10 @@ button:hover {
 .fromWYSIWYG a {
     color: #2673f4;
     text-decoration: underline;
+}
+
+.fromWYSIWYG h2 {
+    font-size: 30px;
 }
 
 .backLink {
@@ -945,7 +975,8 @@ header .icon {
     .date .schedule {
         font-size: 15px;
     }
-    section.events .event {
+    section.events .event,
+    section.events .event a {
         display: block;
     }
     .filter {
@@ -979,7 +1010,8 @@ header .icon {
         font-size: 50px;
     }
     .hp_intro .intro,
-    .hp_intro h1 {
+    .hp_intro h1,
+    .page_about .intro {
         width: 100%;
         max-width: 100%;
     }
@@ -988,7 +1020,8 @@ header .icon {
         height: 400px;
         width: 100%;
     }
-    .hp_intro .intro {
+    .hp_intro .intro,
+    .page_about .intro {
         padding-left: 20px;
     }
     #sect-events-top .filters {

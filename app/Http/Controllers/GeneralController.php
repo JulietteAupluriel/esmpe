@@ -35,6 +35,7 @@ class GeneralController extends Controller
             'legals_nl' => ['required', 'string'],
             'formintro_fr' => ['required', 'string'],
             'formintro_nl' => ['required', 'string'],
+            'hideprog' => ['required', 'string'],
             
         ]);
     }

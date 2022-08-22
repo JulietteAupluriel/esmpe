@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h3 class="my-5">Ajouter un participant</h3>
+<div class="mainTitle"><h3>Ajouter un participant</h3></div>
 	
-<form action="{{ route('participants.store') }}" method="post">
-	@include('participants.form')	
+<form action="{{ route('admin.participants.store') }}" method="post">
+	@include('admin.participants.form')	
 </form>
 
 @endsection

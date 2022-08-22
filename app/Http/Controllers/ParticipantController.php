@@ -29,17 +29,20 @@ class ParticipantController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(Participant  $participant)
     {
+      
         $participant = Participant::create($this->getInputs());
+
         return redirect()->route('admin.participants', ['event' => $participant->event_id]);
     }
 
     public function update(Participant $participant)
     {
-        
+     
+
         $participant->update($this->getInputs());
-        dd($participant);
+       
         return redirect()->route('admin.participants', ['event' => $participant->event_id]);
     }
 
@@ -51,15 +54,17 @@ class ParticipantController extends Controller
 
     private function getInputs()
     {
+
         return request()->validate([
             'name' => ['required', 'string', 'max:255'],
             'firstname' => ['required', 'string', 'max:255'],
             'email' => ['nullable', 'email'],
-            'noemail' => ['nullable'],
+            'noemail' => ['boolean'],
             'phone' => ['nullable', 'string', 'max:255'],
             'commune' => ['nullable', 'string', 'max:255'],
             'national' => ['nullable', 'regex:^[0-9]{2}[.\- ]{0,1}[0-9]{2}[.\- ]{0,1}[0-9]{2}[.\- ]{0,1}[0-9]{3}[.\- ]{0,1}[0-9]{2}$^'],
-            'event_id' => ['required', 'integer']
+            'event_id' => ['required', 'integer'],
+            'lang' => ['nullable', 'string'],
         ]);
     }
 
@@ -77,7 +82,7 @@ class ParticipantController extends Controller
             "Pas d'email",
             "Phone",
             "Commune",
-           
+            "Langue",
         ], ';');
         
         foreach ($data as $key => $row) {
@@ -90,7 +95,7 @@ class ParticipantController extends Controller
                 $row->noemail,
                 $row->phone,
                 $row->commune,
-        
+                $row->lang,
             ], ';');
         }
 

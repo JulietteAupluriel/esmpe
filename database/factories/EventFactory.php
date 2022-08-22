@@ -22,8 +22,10 @@ class EventFactory extends Factory
             'date' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '1 year'),
             'schedule_fr' => $this->faker->text($maxNbChars = 13),
             'schedule_nl' => $this->faker->text($maxNbChars = 13),
-            'venue' => $this->faker->address(),
-            'speaker' => $this->faker->company(),
+            'venue_fr' => $this->faker->address(),
+            'venue_nl' => $this->faker->address(),
+            'speaker_fr' => $this->faker->company(),
+            'speaker_nl' => $this->faker->company(),
             'website' => $this->faker->url()
          
         ];

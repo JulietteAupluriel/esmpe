@@ -22,6 +22,7 @@ class CreateParticipantsTable extends Migration
 			$table->string('phone')->nullable();
 			$table->string('commune')->nullable();
             $table->string('national')->nullable();
+            $table->string('lang')->nullable();
             $table->foreignId('event_id');
             $table->index(['event_id', 'name']);
             $table->timestamps();

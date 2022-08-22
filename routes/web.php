@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\LogoController;
 use App\Http\Controllers\LocalizationController;
 
 /*
@@ -50,7 +51,12 @@ Route::get('/admin/events/{event}/edit', [EventController::class, 'edit'])->name
 Route::patch('/admin/events/{event}/update', [EventController::class, 'update'])->name('admin.events.update')->middleware('auth');
 Route::delete('/admin/events/{event}/destroy', [EventController::class, 'destroy'])->name('admin.events.destroy')->middleware('auth');
 
-
+Route::get('/admin/logos', [LogoController::class, 'index'])->name('admin.logos')->middleware('auth');
+Route::get('/admin/logos/create', [LogoController::class, 'create'])->name('admin.logos.create')->middleware('auth');
+Route::post('/admin/logos/register', [LogoController::class, 'store'])->name('admin.logos.store')->middleware('auth');
+Route::get('/admin/logos/{logo}/edit', [LogoController::class, 'edit'])->name('admin.logos.edit')->middleware('auth');
+Route::patch('/admin/logos/{logo}/update', [LogoController::class, 'update'])->name('admin.logos.update')->middleware('auth');
+Route::delete('/admin/logos/{logo}/destroy', [LogoController::class, 'destroy'])->name('admin.logos.destroy')->middleware('auth');
 
 Route::get('/admin/filters', [FilterController::class, 'index'])->name('admin.filters')->middleware('auth');
 Route::get('/admin/filters/create', [FilterController::class, 'create'])->name('admin.filters.create')->middleware('auth');
@@ -59,10 +65,10 @@ Route::get('/admin/filters/{filter}/edit', [FilterController::class, 'edit'])->n
 Route::patch('/admin/filters/{filter}/update', [FilterController::class, 'update'])->name('admin.filters.update')->middleware('auth');
 Route::delete('/admin/filters/{filter}/destroy', [FilterController::class, 'destroy'])->name('admin.filters.destroy')->middleware('auth');
 
-
-
 Route::get('/admin/participants', [ParticipantController::class, 'index'])->name('admin.participants')->middleware('auth');
 Route::get('/admin/participants/create', [ParticipantController::class, 'create'])->name('admin.participants.create')->middleware('auth');
+Route::post('/admin/participants/register', [ParticipantController::class, 'store'])->name('admin.participants.store')->middleware('auth');
+
 Route::get('/admin/participants/{participant}/edit', [ParticipantController::class, 'edit'])->name('admin.participants.edit')->middleware('auth');
 Route::patch('/admin/participants/{participant}/update', [ParticipantController::class, 'update'])->name('admin.participants.update')->middleware('auth');
 Route::delete('/admin/participants/{participant}/destroy', [ParticipantController::class, 'destroy'])->name('admin.participants.destroy')->middleware('auth');

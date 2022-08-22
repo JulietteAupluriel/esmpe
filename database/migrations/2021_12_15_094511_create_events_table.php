@@ -22,8 +22,10 @@ class CreateEventsTable extends Migration
             $table->date('date')->nullable();
             $table->string('schedule_fr')->nullable();
             $table->string('schedule_nl')->nullable();
-            $table->text('venue')->nullable();
-            $table->string('speaker')->nullable();
+            $table->text('venue_fr')->nullable();
+            $table->text('venue_nl')->nullable();
+            $table->string('speaker_fr')->nullable();
+            $table->string('speaker_nl')->nullable();
             $table->string('website')->nullable();
             $table->unsignedInteger('places')->default(20);
             $table->unsignedInteger('filter')->nullable();

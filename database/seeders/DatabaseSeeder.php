@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Filter::factory(3)->create();
         \App\Models\Event::factory(6)->hasParticipants(4)->create();
         \App\Models\General::factory(1)->create();
+        \App\Models\Logo::factory(6)->create();
 
     }
 }

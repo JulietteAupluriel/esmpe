@@ -18,12 +18,13 @@
         <h1>Etterbeek se mobilise<br/> pour l'<b><span>emploi</span></b></h1>
         <div class="intro"><p>{!! $content->intro_fr !!}</p>
         @else
-        <h1>Etterbeek NL se mobilise<br/> pour l'<b><span>emploi</span></b></h1>
+          
+        <h1>Etterbeek mobiliseert<br/> voor de <b><span>werkgelegenheid</span></b></h1>
         <div class="intro"><p>{!! $content->intro_nl !!}</p>
         @endif
 
 
-       <div> <a href="{{ route('programme', App::getLocale()) }}" class="btn">{{ __('text.voirleprogramme') }}</a></div>
+        @if($content->hideprog==='non') <div> <a href="{{ route('programme', App::getLocale()) }}" class="btn">{{ __('text.voirleprogramme') }}</a></div>        @endif
 
 
     </div>
@@ -32,27 +33,22 @@
     </div>
 
 <div class="mainVisual">
-<img class="deco2" src="{{ asset('img/deco2.svg') }}"/>
-<img class="deco1" src="{{ asset('img/deco1.svg') }}"/>
-<img class="decoHand" src="{{ asset('img/hand.png') }}"/>
- <img class="deco3" src="{{ asset('img/deco3.svg') }}"/>
+    <img class="deco2" src="{{ asset('img/deco2.svg') }}"/>
+    <img class="deco1" src="{{ asset('img/deco1.svg') }}"/>
+    <img class="decoHand" src="{{ asset('img/hand.png') }}"/>
+    <img class="deco3" src="{{ asset('img/deco3.svg') }}"/>
 </div>
 </section>
 
 <section class="partners">
     <div class="wrapper">
-        <ul> <li><a href="https://www.actiris.brussels" target="_blank"><img src="{{ asset('img/partner/actiris.png') }}"/></a></li>
-       
-        @if(app()->isLocale('fr'))
-        <li><a href="https://www.alepwabru.be/" target="_blank"><img src="{{ asset('img/partner/ale_ETT_FR.jpg') }}"/></a></li>
-        @else
-        <li><a href="https://www.alepwabru.be/" target="_blank"><img src="{{ asset('img/partner/ale_ETT_NL.jpg') }}"/></a></li>
-        @endif
+        <ul> 
+            
+        @foreach ($logos as $item)
+        <li><a href="{{ app()->isLocale('fr')? $item->url_fr : $item->url_nl }}" target="_blank"><img src="{{ asset($item->image) }}"/></a></li>
+       @endforeach
 
-        <li><a href="https://etterbeek.brussels/" target="_blank"><img src="{{ asset('img/partner/commune.jpg') }}"/></a></li>
-        <li><a href="https://cpas.etterbeek.be/" target="_blank"><img src="{{ asset('img/partner/cpas.jpg') }}"/></a></li>
-        <li><a href="http://mlett.brussels/" target="_blank"><img src="{{ asset('img/partner/mlet.png') }}"/></a></li>
-    </ul>
+       </ul>
 </div>
 </section>
 

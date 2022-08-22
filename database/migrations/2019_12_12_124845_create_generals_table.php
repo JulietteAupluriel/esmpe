@@ -17,7 +17,6 @@ class CreateGeneralsTable extends Migration
             $table->bigIncrements('id');
             $table->text('intro_fr');
             $table->text('intro_nl')->nullable();
-            
             $table->text('aboutintro_fr')->nullable();
             $table->text('about_fr')->nullable();
             $table->text('aboutintro_nl')->nullable();
@@ -26,6 +25,7 @@ class CreateGeneralsTable extends Migration
             $table->text('legals_fr')->nullable();
             $table->text('formintro_fr')->nullable();
             $table->text('formintro_nl')->nullable();
+            $table->text('hideprog');
             $table->timestamps();
         });
     }

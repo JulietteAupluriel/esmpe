@@ -16,7 +16,7 @@ class Events extends Component
 
     public function render()
     {
-        $events = Event::orderBy('date');
+        $events = Event::orderBy('date')->orderBy('schedule_fr');
         if ($this->tag !== 'none') { $events = $events->where('filter', $this->tag); }
 
         return view('livewire.events', [

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Logo;
 use App\Models\Filter;
 use App\Models\General;
 use App\Models\Participant;
@@ -13,20 +14,20 @@ class PageController extends Controller
     public function index()
     {
        
-        return view('index', ['content' => General::first()]);
-       //return view('index');
+        return view('index', ['content' => General::first(), 'logos' =>Logo::where('page', '=', 'home')->orderBy('order')->get()]);
+       
     }
 
     public function about()
     {
-        return view('about', ['content' => General::first()]);
+        return view('about', ['content' => General::first(), 'logos' =>Logo::where('page', '=', 'about')->orderBy('order')->get()]);
     }
 
     public function programme()
     {
        // $events = Event::get();
-        //return view('programme', ['events' => $events]);
-        return view('programme');
+        return view('programme', ['content' =>General::first()]);
+       // return view('programme');
     }
 
     public function show_an_event(Event $event)
@@ -61,6 +62,7 @@ class PageController extends Controller
             "Email",
             "Phone",
             "Commune",
+            "Langue",
             "Atelier"
         ], ';');
         
@@ -73,6 +75,7 @@ class PageController extends Controller
                 $row->email,
                 $row->phone,
                 $row->commune,
+                $row->lang,
                 $row->event->title
             ], ';');
         }

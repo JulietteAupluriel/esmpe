@@ -19,11 +19,28 @@
 		<label for="email" class="form-label">Email</label>
 		<input type="email" class="form-control" id="email" name="email" value="{{ old('email') ?? $participant->email }}">
 		@error('email') <div class="text-danger">{{ $message }}</div> @enderror
+
 		<label class="container" for="noemail">Pas d'email
-				<input type="checkbox" name="noemail" {{ old('noemail') ?? $participant->noemail ? 'checked' : '' }}  id="noemail">
-				<span class="checkmark"></span>
-			</label>
-			</div>
+		<input type="checkbox"  name="noemail2" onclick="checkFluency()" value="1" {{ old('noemail') ?? $participant->noemail=='1' ? 'checked' : '' }}  id="noemail2">
+		
+		<script>
+			function checkFluency()
+{
+  var checkbox = document.getElementById('noemail2');
+  if (checkbox.checked != true)
+  {
+    document.getElementById('noemail').value='0';
+  }
+  else{  document.getElementById('noemail').value='1'; }
+}
+			</script>
+		<span class="checkmark"></span>
+		@error('noemail') <div class="text-danger">{{ $message }}</div> @enderror
+		</label>
+
+		<input type="hidden"  class="form-control" id="noemail" name="noemail" value="{{ old('noemail') ?? $participant->noemail }}">
+
+	</div>
 	
 	
 </div>
@@ -45,10 +62,15 @@
 </div>
 
 <div class="row">
-<div class="col-md-3 my-2">
+		<div class="col-md-3 my-2">
 		<label for="commune" class="form-label">Commune</label>
 		<input type="text" class="form-control" id="commune" name="commune" value="{{ old('commune') ?? $participant->commune }}">
 		@error('commune') <div class="text-danger">{{ $message }}</div> @enderror
+	</div>
+	<div class="col-md-3 my-2">
+		<label for="lang" class="form-label">Langue</label>
+		<input type="text" class="form-control" id="lang" name="lang" value="{{ old('lang') ?? $participant->lang }}">
+		@error('lang') <div class="text-danger">{{ $message }}</div> @enderror
 	</div>
 	</div>
 

@@ -17,6 +17,7 @@ class ParticipantFactory extends Factory
         return [
             'firstname' => $this->faker->firstName(),
             'name' => $this->faker->lastName(),
+            'lang' =>  Arr::random(['fr', 'nl']),
             'email' => $this->faker->email(),
             'noemail' => $this->faker->boolean(),
             'phone' => $this->faker->phoneNumber(),

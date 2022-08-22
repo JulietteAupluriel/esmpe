@@ -31,8 +31,8 @@
 				{{ $item->name . ' ' . $item->firstname }}
 			</a>
 		</td>
-		<td><a href="mailto:{{ $item->email }}" target="_blank" class="text-decoration-none">{{ $item->email }}  <i>{{ $item->noemail ? '' : 'pas d\'email' }}</i> </a></td>
-		<td><a href="tel:{{ $item->email }}" class="text-decoration-none">{{ $item->phone }}</a></td>
+		<td><a href="mailto:{{ $item->email }}" target="_blank" class="text-decoration-none">{{ $item->email }}  <i>{{ $item->noemail ? 'pas d\'email' : '' }}</i> </a></td>
+		<td><a href="tel:{{ $item->phone }}" class="text-decoration-none">{{ $item->phone }}</a></td>
 		<td class="text-end">
 			<form action="{{ route('admin.participants.destroy', $item) }}" method="POST">
 				@csrf

@@ -58,7 +58,7 @@
 <div class="my-3">
 	<label for="legals_fr" class="form-label">Legals > Contenu FR</label>
 	<textarea name="legals_fr" id="legals_fr" cols="30" rows="5" class="form-control">{{ old('legals_fr') ?? $general->legals_fr }}</textarea>
-	@error('about_fr') <div class="text-danger">{{ $message }}</div> @enderror
+	@error('legals_fr') <div class="text-danger">{{ $message }}</div> @enderror
 </div>
 
 <div class="my-3">
@@ -67,6 +67,18 @@
 	@error('legals_nl') <div class="text-danger">{{ $message }}</div> @enderror
 </div>
 
+
+
+<div class="col-md-3 my-2">
+		<label for="hideprog" class="form-label">Cacher le programme</label>
+
+		<select name="hideprog" id="hideprog" class="form-select">
+			<option value="non" {{ $general->hideprog == 'non' ? 'selected' : '' }}>Non</option>
+			<option value="oui" {{ $general->hideprog  == 'oui' ? 'selected' : '' }}>Oui</option>
+		</select>
+		
+		@error('hideprog') <div class="text-danger">{{ $message }}</div> @enderror
+	</div>
 
 
 <button type="submit" class="btn btn-success text-uppercase my-4">Sauvegarder</button>

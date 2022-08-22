@@ -37,15 +37,22 @@
         </div>
         <div class="inside">
 
-        @if ($event->venue)
-		<div><strong>{{ __('text.lieu') }}</strong>
-        <div><p>{!! $event->venue !!}</p></div>
+        @if ($event->venue_fr)
+		<div><strong>{{ __('text.lieu') }}
+            
+        </strong>
+        <div><p>
+        @if(app()->isLocale('fr'))  {!! $event->venue_fr !!} @else {!! $event->venue_nl !!} @endif
+        </p></div>
         </div>
 		@endif
 
-		@if ($event->speaker)
+		@if ($event->speaker_fr)
         <div><strong>{{ __('text.intervenant') }}</strong>
-        <div><p>{!! $event->speaker !!}</p></div>
+        <div><p>
+        @if(app()->isLocale('fr'))  {!! $event->speaker_fr !!} @else {!! $event->speaker_nl !!} @endif
+
+        </p></div>
         </div>
 		@endif
 
@@ -60,7 +67,7 @@
     </div>
     </div>
     </section>
-
+    @if($event->places > 0)	
 <section class="form" id="sect-subscribe">
     <div class="wrapper">
         <h2>{{ __('text.subscribe') }}</h2>
@@ -68,16 +75,18 @@
         <div class="intro">
         @if(app()->isLocale('fr'))  {!! $content->formintro_fr !!} @else {!! $content->formintro_nl !!} @endif
         </div>
-        	
+       
 		@if ($event->participants->count() < $event->places)
  
 		@livewire('register', ['event' => $event])
+        
 		@else
 			<h4>{{ __('text.noplaces') }}</h4>
 		@endif
+       
 	
        
     </div>
 </section>
-	
+@endif
 @endsection

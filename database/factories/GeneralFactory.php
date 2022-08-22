@@ -1,6 +1,6 @@
 <?php
 namespace Database\Factories;
-
+use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
@@ -24,6 +24,7 @@ class GeneralFactory extends Factory
             'legals_nl' => $this->faker->text($maxNbChars = 3000),
             'formintro_fr' => $this->faker->text($maxNbChars = 300),
             'formintro_nl' => $this->faker->text($maxNbChars = 300),
+            'hideprog' => Arr::random(['oui', 'non']),
         ];
     }
 }

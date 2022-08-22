@@ -16,17 +16,23 @@
         @if(app()->isLocale('fr'))
         <h1><b><span>Qui</span></b> sommes-nous ?</h1>
         @else
-        <h1><b><span>Qui</span></b> sommes-nous ? NL</h1>
+        <h1><b><span>Wie</span></b> zijn we ?</h1>
         @endif
 
         <div class="intro">
             
         @if(app()->isLocale('fr')) 
-        {!! $content->aboutIntro_fr !!}
+          {!! $content->aboutintro_fr !!}
 		@else
-        {!! $content->aboutIntro_nl !!}
+         {!! $content->aboutintro_nl !!}
 		@endif
 
+        <div class="mainVisual">
+            <img class="deco2" src="{{ asset('img/deco2.svg') }}"/>
+            <img class="deco1" src="{{ asset('img/deco1.svg') }}"/>
+            <img class="decoHand" src="{{ asset('img/hand2.png') }}"/>
+            <img class="deco3" src="{{ asset('img/deco3.svg') }}"/>
+        </div>
         </div>
         <div class="content fromWYSIWYG cols2">
         @if(app()->isLocale('fr')) 
@@ -44,21 +50,13 @@
     @if(app()->isLocale('fr')) 
     <h3>Les partenaires de la <b><span>maison de l'emploi</span></b></h3>
     @else
-    <h3>Les partenaires de la <b><span>maison de l'emploi</span> NL</b></h3>
+    <h3>De partners van het  <b><span>jobhuis</span></b></h3>
 	@endif
         
-    <ul> <li><a href="https://www.actiris.brussels" target="_blank"><img src="{{ asset('img/partner/actiris.png') }}"/></a></li>
-       
-       @if(app()->isLocale('fr'))
-       <li><a href="https://www.alepwabru.be/" target="_blank"><img src="{{ asset('img/partner/ale_ETT_FR.jpg') }}"/></a></li>
-       @else
-       <li><a href="https://www.alepwabru.be/" target="_blank"><img src="{{ asset('img/partner/ale_ETT_NL.jpg') }}"/></a></li>
-       @endif
-
-       <li><a href="https://etterbeek.brussels/" target="_blank"><img src="{{ asset('img/partner/commune.jpg') }}"/></a></li>
-       <li><a href="https://cpas.etterbeek.be/" target="_blank"><img src="{{ asset('img/partner/cpas.jpg') }}"/></a></li>
-       <li><a href="http://mlett.brussels/" target="_blank"><img src="{{ asset('img/partner/mlet.png') }}"/></a></li>
-   </ul>
+    <ul>   @foreach ($logos as $item)
+        <li><a href="{{ app()->isLocale('fr')? $item->url_fr : $item->url_nl }}" target="_blank"><img src="{{ asset($item->image) }}"/></a></li>
+       @endforeach
+     </ul>
 </div>
 </section>
 </div>

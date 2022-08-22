@@ -69,21 +69,35 @@
 
 <div class="row">
 	<div class="col-md-6 my-2">
-		<label for="speaker" class="form-label">Intervenant(s)</label>
-		<input type="text" class="form-control" id="speaker" name="speaker" value="{{ old('speaker') ?? $event->speaker }}">
-		@error('speaker') <div class="text-danger">{{ $message }}</div> @enderror
+		<label for="speaker_fr" class="form-label">Intervenant(s) FR</label>
+		<input type="text" class="form-control" id="speaker_fr" name="speaker_fr" value="{{ old('speaker_fr') ?? $event->speaker_fr }}">
+		@error('speaker_fr') <div class="text-danger">{{ $message }}</div> @enderror
 	</div>
 	<div class="col-md-6 my-2">
+		<label for="speaker_nl" class="form-label">Intervenant(s) NL</label>
+		<input type="text" class="form-control" id="speaker_nl" name="speaker_nl" value="{{ old('speaker_nl') ?? $event->speaker_nl }}">
+		@error('speaker_nl') <div class="text-danger">{{ $message }}</div> @enderror
+	</div>
+	
+</div>
+<div class="row">
+<div class="col-md-6 my-2">
 		<label for="website" class="form-label">Site web (URL)</label>
 		<input type="text" class="form-control" id="website" name="website" value="{{ old('website') ?? $event->website }}">
 		@error('website') <div class="text-danger">{{ $message }}</div> @enderror
 	</div>
-</div>
+	</div>
+
 
 <div class="my-3">
-	<label for="venue" class="form-label">Lieu / Adresse</label>
-	<textarea name="venue" id="venue" cols="30" rows="5" class="form-control">{{ old('venue') ?? $event->venue }}</textarea>
-	@error('venue') <div class="text-danger">{{ $message }}</div> @enderror
+	<label for="venue_fr" class="form-label">Lieu / Adresse FR</label>
+	<textarea name="venue_fr" id="venue_fr" cols="30" rows="5" class="form-control">{{ old('venue_fr') ?? $event->venue_fr }}</textarea>
+	@error('venue_fr') <div class="text-danger">{{ $message }}</div> @enderror
+</div>
+<div class="my-3">
+	<label for="venue_nl" class="form-label">Lieu / Adresse NL</label>
+	<textarea name="venue_nl" id="venue_nl" cols="30" rows="5" class="form-control">{{ old('venue_nl') ?? $event->venue_nl }}</textarea>
+	@error('venue_nl') <div class="text-danger">{{ $message }}</div> @enderror
 </div>
 
 <button type="submit" class="btn btn-success text-uppercase my-4">Sauvegarder</button>
