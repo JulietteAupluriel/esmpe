@@ -16,12 +16,12 @@ class Register extends Component
         'name' => ['required', 'string', 'max:255'],
         'firstname' => ['required', 'string', 'max:255'],
         'noemail' => ['boolean'],
-        'email' => ['required_if:noemail,==,false'],
         'phone' => ['required', 'string', 'max:255'],
         'commune' => ['required', 'string', 'max:255'],
         'national' => ['required', 'regex:^[0-9]{2}[.\- ]{0,1}[0-9]{2}[.\- ]{0,1}[0-9]{2}[.\- ]{0,1}[0-9]{3}[.\- ]{0,1}[0-9]{2}$^'],
         'accept' => ['required', 'accepted'],
         'declare' => ['required', 'accepted']
+    
     ];
 
     public function register()
@@ -54,12 +54,11 @@ class Register extends Component
         ];
 
        
-        $commune = 'juliette@aupluriel.be';
-        $email = $this->email;      
-        if($email!=''){Mail::to($commune)->send(new Subscription($emailContent));
-              
-        }
-        else{   Mail::to($email)->bcc($commune)->send(new Subscription($emailContent)); }
+        $commune = 'info@aupluriel.be';
+               
+
+       // Mail::to(commune)->send(new Subscription($emailContent));
+
         $this->registered = true;
     }
     
