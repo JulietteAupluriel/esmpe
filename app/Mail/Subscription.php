@@ -20,6 +20,6 @@ class Subscription extends Mailable
 
     public function build()
     {
-        return $this->subject("Printemps de l'Emploi: Nous avons bien reçu votre formulaire d'inscription")->markdown('emails.confirmation', ['content' => $this->emailContent]);
+        return $this->subject("Etterbeek se mobilise pour l'emploi: Nous avons bien reçu votre formulaire d'inscription")->markdown('emails.confirmation', ['content' => $this->emailContent]);
     }
 }
