@@ -659,8 +659,8 @@ button:hover {
     color: #fff;
     display: inline-block;
     border-radius: 10px;
-    padding: 2px 5px;
-    font-size: 18px;
+    padding: 2px 4px;
+    font-size: 15px;
     line-height: 18px;
     vertical-align: middle;
 }

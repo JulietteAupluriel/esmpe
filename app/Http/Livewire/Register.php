@@ -64,7 +64,7 @@ class Register extends Component
         }
         else{   Mail::to($email)->bcc($commune)->send(new Subscription($emailContent)); }
 
-        $commune = 'info@aupluriel.be';
+        $commune = 'mde1040jh@actiris.be';
 
         $this->registered = true;
     }

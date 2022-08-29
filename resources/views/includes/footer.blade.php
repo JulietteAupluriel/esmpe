@@ -1,7 +1,5 @@
 <footer>
-<div class="copyright">
-	<span>{{ __('text.maintitle') }} 2022</span>
-</div>
+
 <div class="footNav">
 	<ul>
 	<li class="{{ request()->routeIs('index') ? 'active' : '' }}"><a href="{{ route('index') }}">{{ __('text.home') }}</a></li>

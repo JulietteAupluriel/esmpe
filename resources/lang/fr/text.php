@@ -19,7 +19,7 @@ return [
     'noplaces' => 'Désolé, il n\'y a actuellement plus de places disponibles pour cette activité.',
     'mandatorys' => 'Champ obligatoire',
     'emailType' => 'Champ de type email',
-    'noemail' => 'Cliquez ici si vous n’avez pas d’email ou si ne le consultez pas régulièrement.',
+    'noemail' => 'Cliquez ici si vous n’avez pas d’email ou si vous ne le consultez pas régulièrement.',
     'phone' => 'Téléphone',
     'commune' => 'Commune',
     'numeroregistre' => 'Numéro de registre national',
