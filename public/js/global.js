@@ -1,7 +1,7 @@
 $.cookieBubble({
     messageText: $('#cookieText').html(),
     buttonText: $('#cookieBtn').html(),
-    cookiePolicyButtonUrl: '/legals',
+    cookiePolicyButtonUrl: '/legal',
 });
 
 
