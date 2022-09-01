@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
+
 class Localization
 {
     /**
@@ -23,7 +24,12 @@ class Localization
      * @param  \Closure  $next
      * @return mixed
      */
-    
+    if(request('lang')){
+        \Session::put('lang', request('lang'));
+        \App::setLocale(request('lang'));
+       
+       
+    }
         if ( \Session::has('lang')) {
             // Récupération de la 'lang' dans Session et activation
             \App::setLocale(\Session::get('lang'));

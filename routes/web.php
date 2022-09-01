@@ -28,10 +28,14 @@ Route::get('/test', function() {
 // Route qui permet de modifier la langue
 Route::get('locale/{lang}',[LocalizationController::class,'setLang'])->name('setlang');
 
-Route::get('/', [PageController::class, 'index'])->name('index');
-Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/programme', [PageController::class, 'programme'])->name('programme');
-Route::get('/programme/{event}', [PageController::class, 'show_an_event'])->name('events.show');
+
+    Route::get('/', [PageController::class, 'index'])->name('index');
+    Route::get('/about', [PageController::class, 'about'])->name('about');
+    Route::get('/programme', [PageController::class, 'programme'])->name('programme');
+    Route::get('/programme/{event}', [PageController::class, 'show_an_event'])->name('events.show');
+
+    Route::get('/programme/{lang}/{event}', [PageController::class, 'show_an_event_lang'])->name('events.showlang');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

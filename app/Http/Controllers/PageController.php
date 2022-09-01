@@ -39,6 +39,16 @@ class PageController extends Controller
         ]);
     }
 
+    public function show_an_event_lang($lang, Event $event)
+    {
+        \Session::put('lang', $lang);
+        return view('event', [
+            'event' => $event,
+            'filters' => Filter::all(),
+           'content' => General::first()
+        ]);
+    }
+
 
     public function legal()
     {
