@@ -25,7 +25,7 @@ return [
     'numeroregistre' => 'Rijksregisternummer',
     'chercheuremploi' => 'Ik verklaar op erewoord dat ik op zoek naar werk ben en ingeschreven ben bij Actiris',
     'thankyou' => 'Dank u voor uw tijd! Een e-mail zal u binnenkort worden toegezonden.',
-    'maintitle'=> 'Etterbeek mobiliseert voor de werkgelegenheid',
+    'maintitle'=> 'Etterbeek mobiliseert in voor werk',
     'lieu' => 'Locatie',
     'intervenant' => 'In samenwerking met',
     'website' => 'Website' 
