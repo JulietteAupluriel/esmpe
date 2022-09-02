@@ -19,8 +19,7 @@
         <div class="intro"><p>{!! $content->intro_fr !!}</p>
         @else
           
-        <h1>Etterbeek zet zich 
-            Etterbeek mobiliseert in<br/><b><span>voor werk</span></b></h1>
+        <h1>Etterbeek mobiliseert in <b><span>voor werk</span></b></h1>
         <div class="intro"><p>{!! $content->intro_nl !!}</p>
         @endif
 
