@@ -11,7 +11,7 @@ class ParticipantController extends Controller
     public function index()
     {
         return view('admin.participants.index', [
-            'participants' => Participant::where('event_id', request()->query('event'))->orderBy('name')->get(),
+            'participants' => Participant::where('event_id', request()->query('event'))->orderBy('created_at', 'desc')->get(),
         ]);
     }
 
@@ -70,11 +70,12 @@ class ParticipantController extends Controller
 
     public function export()
     {
-        $data = Participant::where('event_id', request()->query('event'))->orderBy('name')->get();
+        $data = Participant::where('event_id', request()->query('event'))->orderBy('created_at', 'desc')->get();
         $handle = fopen(storage_path('app/public/' . Str::slug($data->first()->event->title) . '.csv'), 'w');
         
         fputcsv($handle, [
             "#",
+            "Date inscr",
             "Nom",
             "Prénom",
             "Registre national",
@@ -88,6 +89,7 @@ class ParticipantController extends Controller
         foreach ($data as $key => $row) {
 	        fputcsv($handle, [
                 $key + 1,
+                $row->created_at,
                 $row->name,
                 $row->firstname,
                 $row->national,
