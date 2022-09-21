@@ -13,9 +13,7 @@ class PageController extends Controller
 {
     public function index()
     {
-       
         return view('index', ['content' => General::first(), 'logos' =>Logo::where('page', '=', 'home')->orderBy('order')->get()]);
-       
     }
 
     public function about()
@@ -62,7 +60,7 @@ class PageController extends Controller
             $participants[] = $event->participants;
         }
         $participants = Arr::collapse($participants);
-        $handle = fopen(storage_path('app/public/particpations.csv'), 'w');
+        $handle = fopen(storage_path('app/public/participations.csv'), 'w');
         
         fputcsv($handle, [
             "#",

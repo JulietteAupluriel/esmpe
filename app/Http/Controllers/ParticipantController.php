@@ -71,8 +71,8 @@ class ParticipantController extends Controller
     public function export()
     {
         $data = Participant::where('event_id', request()->query('event'))->orderBy('created_at', 'desc')->get();
-        $handle = fopen(storage_path('app/public/' . Str::slug($data->first()->event->title) . '.csv'), 'w');
-        
+        $handle = fopen(storage_path('app/public/' . Str::slug($data->first()->event->title_fr) . '.csv'), 'w');
+
         fputcsv($handle, [
             "#",
             "Date inscr",
@@ -102,7 +102,7 @@ class ParticipantController extends Controller
         }
 
         fclose($handle);
-        return response()->download(storage_path('app/public/' . Str::slug($data->first()->event->title) . '.csv'));
+        return response()->download(storage_path('app/public/' . Str::slug($data->first()->event->title_fr) . '.csv'));
     }
 
 }
